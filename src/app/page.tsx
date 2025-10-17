@@ -1,103 +1,46 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <section className="grid gap-8">
+      <div className="card-glass p-8">
+        <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight">
+          NotebookLM Clone
+        </h1>
+        <p className="mt-2 text-sm text-foreground/80">
+          Process multimodal data, build a knowledge base, chat with it, remember
+          every conversation, and generate a podcast — powered by open tools.
+        </p>
+        <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <Link href="/sources" className="card-glass p-4 hover:opacity-90">
+            <div className="font-medium">Add Sources</div>
+            <div className="text-xs text-foreground/70">Files, URLs, YouTube</div>
+          </Link>
+          <Link href="/chat" className="card-glass p-4 hover:opacity-90">
+            <div className="font-medium">Ask Questions</div>
+            <div className="text-xs text-foreground/70">Search + RAG answers</div>
+          </Link>
+          <Link href="/memory" className="card-glass p-4 hover:opacity-90">
+            <div className="font-medium">Memory</div>
+            <div className="text-xs text-foreground/70">Conversations & prefs</div>
+          </Link>
+          <Link href="/podcast" className="card-glass p-4 hover:opacity-90">
+            <div className="font-medium">Generate Podcast</div>
+            <div className="text-xs text-foreground/70">Local TTS via Kokoro</div>
+          </Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div>
+      <div className="card-glass p-6">
+        <h2 className="text-lg font-semibold">Stack</h2>
+        <ul className="mt-2 text-sm grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+          <li>Zep memory</li>
+          <li>Milvus vector DB</li>
+          <li>AssemblyAI speech-to-text</li>
+          <li>Firecrawl web scraping</li>
+          <li>Kokoro 82M TTS (open-source)</li>
+          <li>Next.js + Tailwind (UI)</li>
+        </ul>
+      </div>
+    </section>
   );
 }

@@ -24,3 +24,61 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Liquid glass UI styles */
+.liquid-bg {
+  position: relative;
+  min-height: 100vh;
+  /* Soft mesh gradients in corners */
+  background:
+    radial-gradient(60% 60% at 0% 0%, rgba(57, 255, 195, 0.20) 0%, rgba(57, 255, 195, 0.00) 60%),
+    radial-gradient(60% 60% at 100% 0%, rgba(255, 108, 180, 0.18) 0%, rgba(255, 108, 180, 0.00) 60%),
+    radial-gradient(60% 60% at 0% 100%, rgba(60, 130, 255, 0.18) 0%, rgba(60, 130, 255, 0.00) 60%),
+    radial-gradient(60% 60% at 100% 100%, rgba(255, 200, 90, 0.16) 0%, rgba(255, 200, 90, 0.00) 60%),
+    var(--background);
+}
+
+.glass {
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.35),
+      rgba(255, 255, 255, 0.15)
+    );
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  backdrop-filter: blur(12px) saturate(180%);
+  border-radius: 16px;
+}
+
+.card-glass {
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.30),
+      rgba(255, 255, 255, 0.10)
+    );
+  border: 1px solid rgba(255, 255, 255, 0.30);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  backdrop-filter: blur(10px) saturate(180%);
+  border-radius: 14px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .glass {
+    background: linear-gradient(
+        180deg,
+        rgba(20, 20, 20, 0.40),
+        rgba(20, 20, 20, 0.20)
+      );
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+  }
+  .card-glass {
+    background: linear-gradient(
+        180deg,
+        rgba(20, 20, 20, 0.35),
+        rgba(20, 20, 20, 0.15)
+      );
+    border-color: rgba(255, 255, 255, 0.10);
+  }
+}
